@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Distributed Message Passing System by rajeshsurana</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Distributed Message Passing System</h1>
+        <h2>Client - Server Application</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/rajeshsurana/DistributedMessagePassingSystem/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/rajeshsurana/DistributedMessagePassingSystem/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/rajeshsurana/DistributedMessagePassingSystem" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h2>
+<a id="overall-details" class="anchor" href="#overall-details" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overall Details</h2>
+
+<ul>
+<li>Three clients, one server.</li>
+<li>Server contains a table, 10 entries. Each entry is a string.</li>
+<li>Client 1 and client 2, add/delete or modify the strings, at random.</li>
+<li>Client 3 prints out the table, sometimes.</li>
+</ul>
+
+<h2>
+<a id="more-details" class="anchor" href="#more-details" aria-hidden="true"><span class="octicon octicon-link"></span></a>More Details</h2>
+
+<ul>
+<li>Server function is pretty much obvious. The printing client (3) gets the data from the server and prints (server does not print) and hence there will be some issues getting the data from the server. (Do not cheat, if the client gets the address of the string from the server, it can print the string, as it is in shared memory. This is cheating as client server programs do not have access to shared memory.)</li>
+<li>The functions server supports, is to be decided by you. There are many ways to do it.</li>
+<li> Client 1 and 2 may have some pre-coded strings. They do operations on the server, at random and uses these pre-coded strings.</li>
+<li>Client 3 does not constantly print, it prints “sometimes”. Hint: Try to put a few yields in client 3 to skip printing.</li>
+</ul>
+
+<h2>
+<a id="stages" class="anchor" href="#stages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Stages</h2>
+
+<ul>
+<li>Note that the strings may exceed capacity of a message. The first stage is to do it with strings smaller than message size.</li>
+<li>Second stage would be to redesign the clients and sever to be able to do longer strings. Do not redesign the message implementation. Also note that client 3 should print the table with one request to the server, and not multiple requests.</li>
+</ul>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
